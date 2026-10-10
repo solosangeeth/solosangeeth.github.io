@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sangeeth Puthussery – Robotics engineer</title>
+<meta name="description" content="Portfolio of Sangeeth Puthussery, MSc Robotics Engineering: robotic welding motion planning in ROS/MoveIt, deep learning for plant disease, and an IoT welding helmet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#eceff0; --panel:#f8f9f9; --ink:#1b2328; --steel:#58666f; --line:#c9d0d4; --weld:#d4470c;
+  --head:"Archivo","Helvetica Neue",Arial,sans-serif; --body:"Newsreader",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#14191c;--panel:#1b2226;--ink:#e6eaec;--steel:#93a1a9;--line:#2e383e;--weld:#ff7a3d}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:1.125rem/1.65 var(--body)}
+a{color:inherit;text-decoration-color:var(--weld);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--weld);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0;font:600 .95rem var(--head)}
+header.top nav{display:flex;gap:1.5rem}
+header.top a{text-decoration:none}
+header.top a:hover{text-decoration:underline;text-decoration-color:var(--weld)}
+
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;align-items:center;padding:3rem 0 4rem}
+h1{font:800 clamp(2.8rem,7vw,5rem)/.98 var(--head);font-stretch:80%;letter-spacing:-.02em;margin:0 0 1.25rem}
+.lede{font-size:1.3rem;max-width:30rem;margin:0 0 1.75rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{font:600 1rem var(--head);padding:.7rem 1.2rem;border:2px solid var(--ink);text-decoration:none;border-radius:2px}
+.btn.fill{background:var(--ink);color:var(--paper)}
+.btn:hover{border-color:var(--weld)}
+.sheet{width:100%;height:auto;color:var(--steel)}
+.sheet .plate{fill:var(--panel);stroke:var(--line);stroke-width:2}
+.sheet .bore{fill:var(--paper);stroke:var(--steel);stroke-width:1.5}
+.sheet .seam{fill:none;stroke:var(--weld);stroke-width:5;stroke-linecap:round}
+.sheet .torch{fill:var(--weld)}
+.sheet .caption{font:500 11px var(--head);fill:var(--steel)}
+
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+h2{font:700 clamp(1.8rem,4vw,2.5rem)/1.1 var(--head);font-stretch:85%;letter-spacing:-.01em;margin:0 0 .5rem}
+.sub{color:var(--steel);margin:0 0 2.5rem;max-width:36rem}
+
+.project{display:grid;grid-template-columns:14rem 1fr;gap:2rem;padding:2.25rem 0;border-top:1px solid var(--line)}
+.project:first-of-type{border-top:0;padding-top:0}
+.meta{font:500 .95rem/1.5 var(--head);color:var(--steel)}
+.meta strong{display:block;color:var(--ink);font-weight:700;margin-bottom:.15rem}
+.meta ul{list-style:none;margin:1rem 0 0;padding:0}
+.meta li{padding:.15rem 0}
+h3{font:700 1.6rem/1.2 var(--head);font-stretch:90%;margin:0 0 .75rem}
+.project p{margin:0 0 1rem;max-width:40rem}
+.project h4{font:700 1rem var(--head);margin:1.5rem 0 .4rem}
+.project ul.pts{margin:0 0 1rem;padding-left:1.2rem;max-width:40rem}
+.project ul.pts li{margin:.3rem 0}
+.formula{font:500 1rem ui-monospace,Menlo,Consolas,monospace;background:var(--panel);border:1px solid var(--line);padding:.6rem .9rem;display:inline-block;margin:.25rem 0 1rem}
+table{border-collapse:collapse;font:500 .95rem var(--head);margin:.5rem 0 1rem;min-width:26rem}
+th,td{text-align:left;padding:.5rem 1rem .5rem 0;border-bottom:1px solid var(--line)}
+th{font-weight:700}
+.tablewrap{overflow-x:auto;max-width:100%}
+.links{display:flex;gap:1.25rem;font:600 1rem var(--head);margin-top:1.25rem}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:2rem;font:500 1rem/1.6 var(--head)}
+.skills h3{font-size:1.1rem;margin-bottom:.4rem}
+.skills p{margin:0;color:var(--steel)}
+footer{padding:3rem 0 4rem;border-top:1px solid var(--line)}
+footer p{margin:.25rem 0}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding-top:1.5rem}
+  .project{grid-template-columns:1fr;gap:1rem}
+  header.top nav{gap:1rem}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a href="#top"><strong>Sangeeth Puthussery</strong></a>
+    <nav aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div>
+        <h1>Robots that do the repetitive, precise jobs.</h1>
+        <p class="lede">I'm Sangeeth, a robotics engineer (MSc Robotics Engineering, Liverpool Hope University). I plan robot motion, train vision models and build sensor systems for industrial work.</p>
+        <div class="btns">
+          <a class="btn fill" href="#projects">See my projects</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <figure style="margin:0">
+        <svg class="sheet" id="sheet" viewBox="0 0 440 340" role="img" aria-label="Animation of a welding torch circling each tube in a tubesheet, alternating direction tube by tube">
+          <rect class="plate" x="10" y="10" width="420" height="300" rx="6"/>
+          <g id="tubes"></g>
+          <circle class="torch" id="torch" r="7" cx="-20" cy="-20"/>
+          <text class="caption" x="10" y="332">Torch path around each tube, alternating direction</text>
+        </svg>
+      </figure>
+    </div>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <p class="sub">Three projects, from simulated robot welding to a wearable safety monitor.</p>
+
+      <article class="project">
+        <div class="meta">
+          <strong>MSc dissertation</strong>
+          Liverpool Hope University, 2023
+          <ul>
+            <li>ROS Noetic, Ubuntu 20.04</li>
+            <li>MoveIt, OMPL (RRT)</li>
+            <li>Gazebo, Rviz</li>
+            <li>SolidWorks, URDF</li>
+            <li>xArm7, Python</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Motion planning for robotic tube-to-tubesheet welding</h3>
+          <p>In shell-and-tube heat exchangers, each tube is welded to the tubesheet. The weld is a common point of failure, and the work is slow, repetitive and needs skilled welders. I built a motion plan in simulation that lets a 7-axis arm weld every tube in a tubesheet from three inputs.</p>
+
+          <h4>What went wrong first</h4>
+          <p>My first attempt fixed a welding torch model to the xArm7's flange. MoveIt could not plan the continuous 360° orbit around a tube: plans failed or the arm moved erratically.</p>
+
+          <h4>What I changed</h4>
+          <ul class="pts">
+            <li>Designed a three-link end effector in SolidWorks: a link on the flange, a second link on a prismatic joint, and a torch link on a revolute joint.</li>
+            <li>Exported it to URDF and merged it with the xArm7 model. I built a MoveIt package with separate <em>arm</em> and <em>tool</em> planning groups.</li>
+            <li>Simulated the system in Gazebo, with joint goals sent to the controllers and joint states fed back to MoveIt.</li>
+            <li>Wrote Python with the MoveIt interface to set joint-state and pose goals.</li>
+          </ul>
+
+          <h4>How it works</h4>
+          <p>The program takes the tube diameter, the joint type (flush or protruding) and the 3D centre of each tube. It orients the tool for the joint type, moves to each tube, rotates the flange to trace the weld, and flips the rotation direction on every other tube. Then it returns to the home pose. For protruding tubes the torch sits at 45° and the prismatic joint is set with:</p>
+          <span class="formula">distance = d − x + y + z</span>
+          <p style="font:500 .95rem var(--head);color:var(--steel);max-width:40rem">d = tube outer diameter, x = second link length, y = flange radius, z = cos(torch angle) × third link length.</p>
+
+          <h4>Limits and next steps</h4>
+          <p>This was tested in simulation only, on a simplified tubesheet. I did not tackle time parameterisation of the motion. Next steps are the Descartes or Pilz planners for finer control, and moving the code from Python to C++.</p>
+
+          <div class="links">
+            <a href="https://github.com/solosangeeth/robotic-welding-motion-planning">Code on GitHub</a>
+            <a href="assets/dissertation.pdf">Read the dissertation (PDF)</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="meta">
+          <strong>AI coursework (CSCM035)</strong>
+          Liverpool Hope University
+          <ul>
+            <li>Python, Keras</li>
+            <li>Transfer learning</li>
+            <li>VGG16, ResNet50</li>
+            <li>InceptionV3, EfficientNetB0</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tomato leaf disease identification with transfer learning</h3>
+          <p>Plant disease threatens food supply, and expert inspection does not scale. I compared four ImageNet-pretrained CNNs as base models for classifying tomato leaf images into eight diseases plus healthy leaves (9 classes, 256×256 images).</p>
+          <ul class="pts">
+            <li>Split the data 85:15 into train and test, then 7:3 of the training set into train and validation. Kept colour images, since leaf colour matters for diagnosis.</li>
+            <li>Added a 1000-unit ReLU layer with batch normalisation, 20% dropout and a softmax output. Trained with SGD and an exponentially decaying learning rate from 0.1.</li>
+            <li>Ran 5 epochs per model, on a CPU only, to compare them fairly.</li>
+          </ul>
+          <div class="tablewrap">
+          <table>
+            <thead><tr><th>Base model</th><th>Training time</th><th>Result</th></tr></thead>
+            <tbody>
+              <tr><td>VGG16</td><td>5385 s</td><td>86.3% accuracy, still improving</td></tr>
+              <tr><td>ResNet50</td><td>3356 s</td><td>Overfit: validation well below training</td></tr>
+              <tr><td>InceptionV3</td><td>1505 s</td><td>83.8% test accuracy, still improving</td></tr>
+              <tr><td>EfficientNetB0</td><td>Close to VGG16</td><td>Best model, about 98%</td></tr>
+            </tbody>
+          </table>
+          </div>
+          <p>The lesson: a more complex network is not automatically better. InceptionV3 trained fastest, and EfficientNetB0 matched VGG16's training time with far higher accuracy. I also saw overfitting in ResNet50 and EfficientNetB0, and would use more epochs, a GPU and deeper models such as ResNet152V2 next.</p>
+          <div class="links">
+            <a href="https://github.com/solosangeeth/tomato-leaf-disease-cnn">Code on GitHub</a>
+            <a href="assets/leaf-disease-report.pdf">Read the report (PDF)</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="meta">
+          <strong>Personal project</strong>
+          2023
+          <ul>
+            <li>Raspberry Pi Pico, Thonny</li>
+            <li>MQ-2, MQ-135, TMP36</li>
+            <li>ThingSpeak, IFTTT</li>
+            <li>3D-printed enclosures</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Smart welding helmet</h3>
+          <p>Welders often work in confined, poorly ventilated spaces. This helmet monitors air quality, gas leakage and temperature around the welder and sends the data to the cloud, so the welder and a supervisor can both see it.</p>
+          <ul class="pts">
+            <li>A Raspberry Pi Pico reads an MQ-2 gas sensor, an MQ-135 air quality sensor and a TMP36 temperature sensor. The sensors and board sit in 3D-printed cases adapted from Thingiverse designs.</li>
+            <li>Readings upload to a ThingSpeak channel every 20 seconds (the free-tier limit). The welder views them in the ThingShow Android app, and supervisors in a browser.</li>
+            <li>Alerts need no code on the microcontroller. A ThingSpeak React rule fires when values go out of range, calls a ThingHTTP request, and IFTTT pushes a notification to the phone.</li>
+          </ul>
+          <p>It currently runs tethered to a computer, and the low-cost sensors are not accurate enough for industrial use. Next steps are a Li-Po battery version and better-calibrated sensors.</p>
+          <div class="links">
+            <a href="https://github.com/solosangeeth/smart-welding-helmet">Code on GitHub</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <p class="sub">What I used across these projects.</p>
+      <div class="skills">
+        <div><h3>Robotics</h3><p>ROS, MoveIt, OMPL, Gazebo, Rviz, URDF, kinematics and collision-aware planning</p></div>
+        <div><h3>Machine learning</h3><p>Keras, transfer learning, CNN architectures, model comparison</p></div>
+        <div><h3>Embedded and IoT</h3><p>Raspberry Pi Pico, analogue sensors, ThingSpeak, IFTTT</p></div>
+        <div><h3>Design and tools</h3><p>SolidWorks, 3D printing, Python, Ubuntu, Git</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:sangeethjoseph96@gmail.com">sangeethjoseph96@gmail.com</a></p>
+    <p><a href="https://github.com/solosangeeth">GitHub</a> and <a href="https://www.linkedin.com/in/sangeeth-joseph">LinkedIn</a></p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var NS="http://www.w3.org/2000/svg", cols=4, rows=3, gx=100, gy=90, ox=70, oy=65, R=27;
+  var g=document.getElementById("tubes"), torch=document.getElementById("torch");
+  var tubes=[], i, r, c;
+  function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e}
+  for(r=0;r<rows;r++)for(c=0;c<cols;c++){
+    var cx=ox+c*gx, cy=oy+r*gy, idx=r*cols+c, dir=idx%2===0?1:-1;
+    g.appendChild(el("circle",{"class":"bore",cx:cx,cy:cy,r:R-6}));
+    var sweep=dir===1?1:0;
+    var seam=el("path",{"class":"seam",pathLength:1,"stroke-dasharray":1,"stroke-dashoffset":1,
+      d:"M"+cx+" "+(cy-R)+" A"+R+" "+R+" 0 1 "+sweep+" "+cx+" "+(cy+R)+" A"+R+" "+R+" 0 1 "+sweep+" "+cx+" "+(cy-R)});
+    g.appendChild(seam);
+    tubes.push({cx:cx,cy:cy,dir:dir,seam:seam});
+  }
+  function setProgress(t,p){
+    t.seam.setAttribute("stroke-dashoffset",1-p);
+    var a=p*2*Math.PI*t.dir;
+    torch.setAttribute("cx",t.cx+R*Math.sin(a));
+    torch.setAttribute("cy",t.cy-R*Math.cos(a));
+  }
+  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(reduce){tubes.forEach(function(t){t.seam.setAttribute("stroke-dashoffset",0)});torch.setAttribute("cx",-20);return}
+  var per=1400, start=null, total=tubes.length;
+  function frame(ts){
+    if(start===null)start=ts;
+    var el_=ts-start, cycle=per*total+1200, m=el_%cycle, k=Math.floor(m/per);
+    if(k>=total){torch.setAttribute("cx",-20);tubes.forEach(function(t){t.seam.setAttribute("stroke-dashoffset",0)})}
+    else{
+      tubes.forEach(function(t,j){t.seam.setAttribute("stroke-dashoffset",j<k?0:1)});
+      setProgress(tubes[k],(m-k*per)/per);
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
