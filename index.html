@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sangeeth Puthussery – Robotics engineer</title>
-<meta name="description" content="Portfolio of Sangeeth Puthussery, MSc Robotics Engineering: robotic welding motion planning in ROS/MoveIt, deep learning for plant disease, and an IoT welding helmet.">
+<meta name="description" content="Portfolio of Sangeeth Puthussery, MSc Robotics Engineering: robotic welding motion planning in ROS/MoveIt, a Sesame quadruped robot, deep learning for plant disease, and an IoT welding helmet.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" rel="stylesheet">
@@ -74,6 +74,19 @@ footer p{margin:.25rem 0}
   .project{grid-template-columns:1fr;gap:1rem}
   header.top nav{gap:1rem}
 }
+
+/* Responsive project video demonstrations */
+.video-demo{margin:1.5rem 0 1rem;max-width:42rem}
+.video-demo h4{font:700 1rem var(--head);margin:0 0 .5rem}
+.video-frame{position:relative;width:100%;aspect-ratio:16/9;background:var(--panel);border:1px solid var(--line);overflow:hidden}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-note{font:500 .9rem/1.5 var(--head);color:var(--steel);margin:.5rem 0 0}
+.media-block{margin:1.5rem 0 1rem;max-width:42rem}
+.media-block h4{font:700 1rem var(--head);margin:0 0 .5rem}
+.project-image{display:block;width:100%;height:auto;max-height:30rem;object-fit:contain;background:var(--panel);border:1px solid var(--line)}
+.video-frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#111}
+.resource-note{font:500 .9rem/1.5 var(--head);color:var(--steel);margin:.5rem 0 0}
+
 </style>
 </head>
 <body>
@@ -109,7 +122,46 @@ footer p{margin:.25rem 0}
 
     <section id="projects">
       <h2>Projects</h2>
-      <p class="sub">Three projects, from simulated robot welding to a wearable safety monitor.</p>
+      <p class="sub">Four projects spanning quadruped robotics, simulated industrial welding, computer vision and embedded safety monitoring.</p>
+
+      <article class="project">
+        <div class="meta">
+          <strong>Personal robotics project</strong>
+          2026
+          <ul>
+            <li>ESP32 / LOLIN S2 Mini</li>
+            <li>8 servo motors</li>
+            <li>3D-printed mechanical frame</li>
+            <li>OLED display</li>
+            <li>Wi-Fi control</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Sesame: ESP32 quadruped walking robot</h3>
+          <p>I built and tested a small quadruped robot based on the open-source Sesame project. The robot combines a 3D-printed frame, eight servo actuators and an OLED face in a compact platform for experimenting with legged movement and embedded control.</p>
+          <ul class="pts">
+            <li>Assembled a four-legged robot with two servo motors per leg.</li>
+            <li>Worked with an ESP32-based controller and an OLED display for expressive feedback.</li>
+            <li>Used a 3D-printed structure to keep the robot compact and maker-friendly.</li>
+            <li>Explored the project's Wi-Fi control approach for triggering movement and expressions.</li>
+          </ul>
+          <div class="media-block">
+            <h4>Robot in action</h4>
+            <div class="video-frame">
+              <video controls preload="metadata" playsinline aria-label="Video demonstration of my Sesame quadruped robot">
+                <source src="assets/sesame-robot-demo.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/sesame-robot-demo.mp4">Open the robot demonstration video</a>.
+              </video>
+            </div>
+            <p class="resource-note">Add your demonstration video to the <code>assets</code> folder as <code>sesame-robot-demo.mp4</code>. Keep the video reasonably compressed for fast loading.</p>
+          </div>
+          <div class="links">
+            <a href="https://www.doriantodd.com/sesame/" target="_blank" rel="noopener">Original Sesame project</a>
+            <a href="https://github.com/dorianborian/sesame-robot" target="_blank" rel="noopener">Open-source repository</a>
+          </div>
+          <p class="resource-note">Credit: Sesame is an open-source project by Dorian Todd. This portfolio entry describes my build and testing of the project, not original authorship of the underlying design.</p>
+        </div>
+      </article>
 
       <article class="project">
         <div class="meta">
@@ -146,8 +198,25 @@ footer p{margin:.25rem 0}
           <h4>Limits and next steps</h4>
           <p>This was tested in simulation only, on a simplified tubesheet. I did not tackle time parameterisation of the motion. Next steps are the Descartes or Pilz planners for finer control, and moving the code from Python to C++.</p>
 
+
+          <div class="media-block">
+            <h4>Project image</h4>
+            <a href="assets/robotic-welding-project.jpg" target="_blank" rel="noopener">
+              <img class="project-image" src="assets/robotic-welding-project.jpg" alt="Robotic tube-to-tubesheet welding simulation project" loading="lazy">
+            </a>
+            <p class="resource-note">Add your project image to the <code>assets</code> folder using the filename <code>robotic-welding-project.jpg</code>.</p>
+          </div>
+          <div class="media-block">
+            <h4>Project video demonstration</h4>
+            <div class="video-frame">
+              <video controls preload="metadata" playsinline aria-label="Video demonstration of robotic tube-to-tubesheet welding motion planning">
+                <source src="assets/msc-robotic-welding-demo.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/msc-robotic-welding-demo.mp4">Open the robotic welding demonstration video</a>.
+              </video>
+            </div>
+            <p class="resource-note">Add your MSc project demonstration video to the <code>assets</code> folder as <code>msc-robotic-welding-demo.mp4</code>.</p>
+          </div>
           <div class="links">
-            <a href="https://github.com/solosangeeth/robotic-welding-motion-planning">Code on GitHub</a>
             <a href="assets/dissertation.pdf">Read the dissertation (PDF)</a>
           </div>
         </div>
@@ -184,6 +253,7 @@ footer p{margin:.25rem 0}
           </table>
           </div>
           <p>The lesson: a more complex network is not automatically better. InceptionV3 trained fastest, and EfficientNetB0 matched VGG16's training time with far higher accuracy. I also saw overfitting in ResNet50 and EfficientNetB0, and would use more epochs, a GPU and deeper models such as ResNet152V2 next.</p>
+
           <div class="links">
             <a href="https://github.com/solosangeeth/tomato-leaf-disease-cnn">Code on GitHub</a>
             <a href="assets/leaf-disease-report.pdf">Read the report (PDF)</a>
@@ -211,9 +281,19 @@ footer p{margin:.25rem 0}
             <li>Alerts need no code on the microcontroller. A ThingSpeak React rule fires when values go out of range, calls a ThingHTTP request, and IFTTT pushes a notification to the phone.</li>
           </ul>
           <p>It currently runs tethered to a computer, and the low-cost sensors are not accurate enough for industrial use. Next steps are a Li-Po battery version and better-calibrated sensors.</p>
+
+          <div class="media-block">
+            <h4>Project image</h4>
+            <a href="assets/smart-welding-helmet.jpg" target="_blank" rel="noopener">
+              <img class="project-image" src="assets/smart-welding-helmet.jpg" alt="Smart welding helmet prototype and sensor system" loading="lazy">
+            </a>
+            <p class="resource-note">Add your project image to the <code>assets</code> folder as <code>smart-welding-helmet.jpg</code>.</p>
+          </div>
           <div class="links">
+            <a href="assets/smart-welding-helmet-report.pdf">Read the project report (PDF)</a>
             <a href="https://github.com/solosangeeth/smart-welding-helmet">Code on GitHub</a>
           </div>
+          <p class="resource-note">Add your PDF report to the <code>assets</code> folder as <code>smart-welding-helmet-report.pdf</code>.</p>
         </div>
       </article>
     </section>
@@ -222,10 +302,10 @@ footer p{margin:.25rem 0}
       <h2>Skills</h2>
       <p class="sub">What I used across these projects.</p>
       <div class="skills">
-        <div><h3>Robotics</h3><p>ROS, MoveIt, OMPL, Gazebo, Rviz, URDF, kinematics and collision-aware planning</p></div>
+        <div><h3>Robotics</h3><p>ROS, MoveIt, OMPL, Gazebo, RViz, URDF, kinematics, collision-aware planning and quadruped robot integration</p></div>
         <div><h3>Machine learning</h3><p>Keras, transfer learning, CNN architectures, model comparison</p></div>
         <div><h3>Embedded and IoT</h3><p>Raspberry Pi Pico, analogue sensors, ThingSpeak, IFTTT</p></div>
-        <div><h3>Design and tools</h3><p>SolidWorks, 3D printing, Python, Ubuntu, Git</p></div>
+        <div><h3>Design and tools</h3><p>SolidWorks, 3D printing, ESP32, servo integration, Python, Ubuntu, Git</p></div>
       </div>
     </section>
   </main>
